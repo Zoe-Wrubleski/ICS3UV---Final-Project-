@@ -20,11 +20,32 @@ const optionC: string[] = ["c. By thinking of their happiest memories", "c. Herm
 const optionD: string[] = ["d. By drinking Polyjuice potion", "d. Draco Malfoy", "d. The room of requirements", "d. Harry Potter will not lie", "d. Aragog", "d. Hermione had given Scabbers to Neville", "d. Rita Skeeter", "d. Open", "d. The name of the branch of the ministry of magic that stores prophecies", "d. Gryffindor", "d. Badger", "d. 6 ⅓", "d. Azkaban", "d. Percy", "d. Sirius Black", "d. Basilisk", "d. Seeker", "d. Slytherin", "d. Severus Snape", "d. Nox"];
 const answer: string[] = ["c", "b", "d", "a", "a", "c", "c", "b", "c", "a", "d", "c", "b", "c", "c", "c", "d", "c", "d", "b"];
 
-// testing the format of the questions
-console.log(question[6]);
-console.log(optionA[6]);
-console.log(optionB[6]);
-console.log(optionC[6]);
-console.log(optionD[6]);
+// loop that asks the trivia questions and updated the score based on the users answer
+for (let number = 0; number <= 9; number ++) {
+  // asking the questions and giving multiple coice options
+  console.log(question[number]);
+  console.log(optionA[number]);
+  console.log(optionB[number]);
+  console.log(optionC[number]);
+  console.log(optionD[number]);
 
-console.log("\nDone");
+  //prompting the user to answer the question
+  let userAnswer: string = prompt("Enter a, b, c or d: ");
+  userAnswer = userAnswer.toLowerCase();
+
+  // updating the score based on the users answer
+  if (userAnswer == answer[number]) {
+    userScore ++;
+    console.log("Great!");
+  } else {
+    console.log("Wrong :(");
+  }
+
+  // dividing line to clearly separate the questions
+  console.log("------------------------------------");
+}
+
+console.log("Congratulations! You are done Level 1");
+
+//testing to see if the score works with the loop
+score();
