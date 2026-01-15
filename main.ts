@@ -45,7 +45,54 @@ for (let number = 0; number <= 9; number ++) {
   console.log("------------------------------------");
 }
 
+// displaying score so far
 console.log("Congratulations! You are done Level 1");
+console.log("Your score so far is: " + userScore + "/10");
+console.log("------------------------------------");
 
-//testing to see if the score works with the loop
+
+// loop that asks the second half of trivia questions 
+for (let number = 10; number <= 19; number++) {
+  // asking the questions and giving multiple coice options
+  console.log(question[number]);
+  console.log(optionA[number]);
+  console.log(optionB[number]);
+  console.log(optionC[number]);
+  console.log(optionD[number]);
+
+  //prompting the user to answer the question
+  let userAnswer: string = prompt("Enter a, b, c or d: ");
+  userAnswer = userAnswer.toLowerCase();
+
+  // updating the score based on the users answer
+  if (userAnswer == answer[number]) {
+    userScore++;
+    console.log("Great!");
+  } else {
+    console.log("Wrong :(");
+  }
+
+  // dividing line to clearly separate the questions
+  console.log("------------------------------------");
+}
+
+// display final score
+console.log("You have completed Level 2!");
+console.log("Your final score is: ")
 score();
+console.log("------------------------------------");
+
+// display final message based on the users score
+if (userScore == 20) {
+  console.log("Perfect! Great job :)");
+} else if (userScore >= 15) {
+  console.log("Good job!");
+} else if (userScore >= 10) {
+  console.log("Pretty good");
+} else if (userScore > 0) {
+  console.log("Maybe try again?");
+} else {
+  console.log("You should probably re-read/watch Harry Potter…");
+}
+
+console.log("\nDone");
