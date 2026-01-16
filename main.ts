@@ -37,6 +37,9 @@ for (let number = 0; number <= 9; number ++) {
   if (userAnswer == answer[number]) {
     userScore ++;
     console.log("Great!");
+  } else if (userAnswer == answer[number] + ".") {
+    userScore++;
+    console.log("Great!");
   } else {
     console.log("Wrong :(");
   }
